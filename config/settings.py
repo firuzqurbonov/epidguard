@@ -20,7 +20,7 @@ if not SECRET_KEY:
     if not key_path.exists():
         key_path.write_text(secrets.token_urlsafe(64), encoding='utf-8')
     SECRET_KEY = key_path.read_text(encoding='utf-8').strip()
-ALLOWED_HOSTS ="*"
+ALLOWED_HOSTS = ['157.180.29.248', 'localhost', '127.0.0.1']
 CSRF_TRUSTED_ORIGINS = [x for x in os.getenv('CSRF_TRUSTED_ORIGINS', '').split(',') if x]
 INSTALLED_APPS = [
     'django.contrib.admin', 'django.contrib.auth', 'django.contrib.contenttypes',
